@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Site</title>
+    
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 100%;
+      }
+
+      #search {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border: none;
+        width: 100%;
+      }
+
+      #featured-jobs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .job-card {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 15px;
+        width: calc(33.333% - 20px);
+        box-sizing: border-box;
+      }
+
+      footer {
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 1em 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      tr {
+        display: flex;
+        width: 75%;
+
+        text-align: center;
+      }
+      td {
+        flex: 1 1 10%;
+      }
+
+      th {
+        flex: 1 1 10%;
+        text-align: center;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: gray;
+      }
+
+      .center-container {
+        text-align: center;
+      }
+
+      .center-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+      }
+      nav {
+        background-color: #3498db;
+        padding: 10px;
+        text-align: left;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+        height: 1em;
+      }
+      .icon-container {
+        font-size: 1.25em;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a class="icon-container" href="./home.html"><b> UNIVERSITY JOBS PORTAL<b> </a>
+      <a href="./home.html">Home</a>
+      <a href="./About.html">About Us</a>
+      <a href="./jobposting.html">Manage Jobs</a>
+      <a href="./createapplication.html">Apply For Job</a>
+    </nav>
+
+    <div class="container">
+      <h2>Manage Jobs</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Application Developer</td>
+            <td>IT Department</td>
+            <td>
+              <button class="edit-btn" onclick="applicants()">
+                See Applicants
+              </button>
+              <button class="edit-btn">Delete</button>
+              <button class="update-btn" onclick="movetoupdate()">
+                Update
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Application Developer</td>
+            <td>School of Business</td>
+            <td>
+              <button class="edit-btn" onclick="applicants()">
+                See Applicants
+              </button>
+              <button class="edit-btn">Delete</button>
+              <button class="update-btn">Update</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Application Developer</td>
+            <td>College of Engineering</td>
+            <td>
+              <button class="edit-btn" onclick="applicants()">
+                See Applicants
+              </button>
+              <button class="edit-btn">Delete</button>
+              <button class="update-btn">Update</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="center-container">
+        <button class="center-container" onclick="redirectToAnotherPage()">
+          Create New Job Posting
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Dummy data for featured jobs
+      const featuredJobs = [
+        { title: "Web Developer", company: "Tech Co", location: "City A" },
+        { title: "UX Designer", company: "Design Studio", location: "City B" },
+        { title: "Data Analyst", company: "Data Corp", location: "City C" },
+      ];
+
+      // Function to display featured jobs
+      function displayFeaturedJobs() {
+        const featuredJobsContainer = document.getElementById("featured-jobs");
+
+        featuredJobs.forEach((job) => {
+          const jobCard = document.createElement("div");
+          jobCard.classList.add("job-card");
+          jobCard.innerHTML = `
+                    <h3>${job.title}</h3>
+                    <p>${job.company}</p>
+                    <p>${job.location}</p>
+                `;
+          featuredJobsContainer.appendChild(jobCard);
+        });
+      }
+      function redirectToAnotherPage() {
+        // Replace 'destination.html' with the actual URL of the page you want to redirect to
+        window.location.href = "./createjob.html";
+      }
+      function movetoupdate() {
+        window.location.href = "./UpdateJob.html";
+      }
+
+      function applicants() {
+        window.location.href = "./applicants.html";
+      }
+      // Display featured jobs on page load
+      displayFeaturedJobs();
+    </script>
+  </body>
+</html>
