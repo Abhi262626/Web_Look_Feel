@@ -4,14 +4,11 @@ nav {
     list-style: none;
     display: flex;
   }
-
 @media only screen and (max-width: 600px) {
     nav a {
       display: block;
       margin-bottom: 10px;
-    }
-
-  
+    }  
 
     nav {
       flex-direction: column;
