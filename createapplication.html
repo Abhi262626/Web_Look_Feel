@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+
+        color: black;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      h2 {
+        text-align: center;
+        color: #3498db;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .form-group {
+        width: calc(50% - 10px);
+        margin-bottom: 16px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        border-radius: 4px;
+        font-size: 14px;
+
+        color: black;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #2772a4;
+      }
+      nav {
+        background-color: #3498db;
+        padding: 10px;
+        text-align: left;
+      }
+      .icon-container {
+        font-size: 1.25em;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+        height: 1em;
+      }
+      @media only screen and (max-width: 600px) {
+        nav a {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .hamburger-menu {
+          display: block;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav.show {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="icon-container" href="./home.html"><b> UNIVERSITY JOBS PORTAL<b> </a>  <a href="./home.html">Home</a>
+      <a href="./About.html">About</a>
+      <a href="./jobposting.html">Manage Jobs</a>
+      <a href="./createapplication.html">Apply For Job</a>
+    </nav>
+    <div class="container">
+      <label
+        for="jobTitle"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Job Title:</label
+      >
+      <input
+        type="text"
+        id="jobTitle"
+        name="jobTitle"
+        disabled
+        value="Application Developer"
+      />
+
+      <label
+        for="jobDescription"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Job Description:</label
+      >
+      <textarea id="jobDescription" name="jobDescription" rows="4" disabled>
+As a PHP Developer, you will be a key member of our software development team, responsible for designing, developing, and maintaining dynamic web applications. Your role will involve collaborating with cross-functional teams, understanding client requirements, and implementing efficient solutions. The ideal candidate possesses a strong foundation in PHP development, database management, and is capable of delivering high-quality, scalable code.</textarea
+      >
+
+      <label
+        for="jobType"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Job Type:</label
+      >
+      <input
+        type="text"
+        id="jobType"
+        name="jobType"
+        disabled
+        value="Full Time"
+      />
+
+      <label
+        for="location"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Location:</label
+      >
+      <input
+        type="text"
+        id="location"
+        name="location"
+        disabled
+        value="IT Department"
+      />
+
+      <label
+        for="salary"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Salary:</label
+      >
+      <input
+        type="text"
+        id="salary"
+        name="salary"
+        disabled
+        value="$50 per hour"
+      />
+
+      <label
+        for="positions"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >#Positions:</label
+      >
+      <input type="text" id="salary" name="position" disabled value="2" />
+
+      <label
+        for="positions"
+        style="font-size: small; vertical-align: middle; padding-top: 0.25em"
+        >Contact Email</label
+      >
+      <input
+        type="text"
+        id="salary"
+        name="position"
+        disabled
+        value="itdepartment@university.com"
+      />
+    </div>
+    <div class="container">
+      <h2>Apply for this Job</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input
+            type="text"
+            id="id"
+            name="id"
+            required
+            placeholder="Your employee ID"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="id">Gender:</label>
+          <input type="text" id="id" name="id" required placeholder="Gender" />
+        </div>
+
+        <div class="form-group">
+          <label for="coverLetter">Cover Letter:</label>
+          <textarea id="coverLetter" name="coverLetter" required></textarea>
+        </div>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("hamburger-menu").click(function () {
+      $("hamburger-menu").slideToggle();
+    });
+  });
+</script>
